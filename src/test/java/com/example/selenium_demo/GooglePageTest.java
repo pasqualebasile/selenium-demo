@@ -25,7 +25,7 @@ public class GooglePageTest {
   public static void setUpAll() {
     System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
     ChromeOptions chromeOptions = new ChromeOptions();
-    chromeOptions.addArguments("--headless");
+    // chromeOptions.addArguments("--headless");
     chromeOptions.addArguments("--no-sandbox");
     webDriver = new ChromeDriver(chromeOptions);
 
@@ -38,10 +38,7 @@ public class GooglePageTest {
 
   @Test
   public void isLoaded() {
-    if (webDriver.getPageSource().contains("fortunato"))
-      Assertions.assertTrue(true);
-    else
-      Assertions.fail("Non Trovato");
+    Assertions.assertTrue(webDriver.getPageSource().contains("Mi sento fortunato"));
   }
 
 /*
